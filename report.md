@@ -11,6 +11,7 @@
 
 ### Вопрос
 - Есть ли требования по откату обновлений в случае сбоя?
+  
 ---
 ### *07.04.2025*
 ### Что сделано
@@ -35,7 +36,7 @@ https://github.com/Canis1219/cyberimmune-autonomy--chvt-preview/blob/master/proj
 - Начать разработку
 ### Вопрос
 - До какого числа нужно представить первую версию реализации?
---
+---
 - ### *28.04.2025*
 ### Что сделано
 https://github.com/Canis1219/cyberimmune-autonomy--chvt-preview/blob/master/project.md 
