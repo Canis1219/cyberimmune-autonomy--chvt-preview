@@ -177,6 +177,10 @@ class BaseControlSystem(Process):
     def _lock_cargo(self):
         pass
 
+    @abstractmethod
+    def _refresh(self, file_name):
+        pass
+    
     def enable_surprises(self):
         """ активация киберпрепятствий """
         self._log_message(LOG_DEBUG, "активация киберпрепятствий")
@@ -245,7 +249,10 @@ class BaseControlSystem(Process):
                 event: Event = self._events_q.get_nowait()
                 if not isinstance(event, Event):
                     return
-                if event.operation == 'set_mission':
+                if event.operation == 'refresh_script':
+                    file_name = event.parameters
+                    self._refresh(file_name)
+                elif event.operation == 'set_mission':
                     self._set_mission(event.parameters)
                     self._lock_cargo()
                 elif event.operation == "position_update":
